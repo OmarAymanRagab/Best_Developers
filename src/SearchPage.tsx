@@ -55,8 +55,6 @@ export default function SearchBar() {
         setDuration(event.target.value);
     }, []);
 
-    console.log(typeof languages)
-
     const getInitials = ((nameString: string) => {
         const fullName: string[] = nameString.split(' ');
         const initials = fullName ? fullName.shift().charAt(0) : "";
@@ -67,7 +65,6 @@ export default function SearchBar() {
         language != "" ? fetchDevelopers<{ data: Array<object> }>(language, duration)
             .then((data) => {
                 setLoading(true)
-                console.log("res", typeof data)
                 setDevelopers(data)
                 setLoading(false)
             })
@@ -82,7 +79,6 @@ export default function SearchBar() {
     const handleSearch = useCallback(() => {
         fetchDevelopers<{ data: Array<object> }>(language, duration)
             .then((data) => {
-                console.log("res", typeof data)
                 setDevelopers(data)
             })
             .catch(error => {
