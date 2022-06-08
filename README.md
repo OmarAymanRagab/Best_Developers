@@ -16,12 +16,11 @@ The card also contains `Learn more` button that takes you to the the github repo
 
 ## Getting Started
 
-First, run the development server:
+First, install the packages then run the development server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
 ```
 
 These scripts refer to the different stages of developing an application:
